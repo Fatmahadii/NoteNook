@@ -2,7 +2,7 @@
   "expo": {
     "name": "NoteNook",
     "slug": "NoteNook",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,17 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fatma93.NoteNook"
     },
     "android": {
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FBF5E9"
-      }
+      },
+      "package": "com.fatma93.NoteNook"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4377d68f-a409-4991-b84b-7bc139aa267f"
+      }
     }
   }
 }

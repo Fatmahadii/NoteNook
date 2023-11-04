@@ -21,6 +21,12 @@ const NoteApp = ({ navigation }) => {
     }
   };
 
+  const updateNotes = (updatedNotes) => {
+    setNotes(updatedNotes);
+    saveNotes(updatedNotes);
+  };
+  
+
    
     const saveNotes = async (notes) => {
       try {
@@ -50,7 +56,7 @@ const NoteApp = ({ navigation }) => {
 
 
   const editNote = (index) => {
-    navigation.navigate('Edit', { index, notes, setNotes }); 
+    navigation.navigate('Edit', { index, onEditNote: updateNotes, notes });
   };
   
   

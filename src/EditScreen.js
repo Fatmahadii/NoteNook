@@ -7,17 +7,22 @@ const EditScreen = ({ route, navigation }) => {
   const [editedNote, setEditedNote] = useState(notes[index].text);
   const [errorMessage, setErrorMessage] = useState('');
 
+ 
+  
+
   const saveChanges = () => {
-    if(editedNote != '') {
-      const updatedNotes = [...notes];
+    if (editedNote !== '') {
+      const updatedNotes = [...route.params.notes];
       updatedNotes[index].text = editedNote;
       setErrorMessage('');
-      setNotes(updatedNotes); 
+      route.params.onEditNote(updatedNotes); // Correct function name
       navigation.goBack();
     } else {
       setErrorMessage('Fyll i något');
     }
   };
+  
+  
 
   return (
     <SafeAreaView style={styles.container}>
